@@ -1,3 +1,5 @@
+package module1;
+
 public class CircularDepA {
     private Object key1 = new Object();
     private Object key2 = new Object();

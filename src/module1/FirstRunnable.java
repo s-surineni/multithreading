@@ -1,3 +1,5 @@
+package module1;
+
 public class FirstRunnable {
     public static void main(String[] args) {
         Runnable runnable = () -> {

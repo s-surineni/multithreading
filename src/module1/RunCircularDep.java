@@ -1,3 +1,5 @@
+package module1;
+
 public class RunCircularDep {
     public static void main(String[] args) throws InterruptedException {
         CircularDepA cDep = new CircularDepA();

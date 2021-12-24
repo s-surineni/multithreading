@@ -1,3 +1,5 @@
+package module1;
+
 public class RaceCondition {
     public static void main(String[] args) throws InterruptedException {
         LongWrapper longWrapper = new LongWrapper(0);
