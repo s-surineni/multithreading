@@ -24,6 +24,7 @@ public class ProducerConsumer {
                 while (count++ < 50) {
                     try {
                         lock.lock();
+                        int val = 10 / 0;
                         while (isFull(buffer)) {
                             isFull.await();
                         }
@@ -76,6 +77,9 @@ public class ProducerConsumer {
         producersAndConsumers.addAll(consumers);
 
         ExecutorService executorService = Executors.newFixedThreadPool(8);
+//        This will cause deadlock as only producers are started
+//        ExecutorService executorService = Executors.newFixedThreadPool(4);
+//        ExecutorService executorService = Executors.newFixedThreadPool(5);
         try {
             List<Future<String>> futures = executorService.invokeAll(producersAndConsumers);
             futures.forEach(
